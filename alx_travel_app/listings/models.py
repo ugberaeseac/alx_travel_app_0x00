@@ -51,7 +51,7 @@ class BookingStatus(models.TextChoices):
     CANCELLED = 'Cancelled'
 
 
-class Bookings(models.Model):
+class Booking(models.Model):
     booking_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     traveller = models.ForeignKey(User, on_delete=models.CASCADE, related_name='bookings')
     listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name='bookings')
@@ -68,7 +68,7 @@ class Bookings(models.Model):
         return f'Booking {self.booking_id} by {self.traveller.email}'
 
 
-class Reviews(models.Model):
+class Review(models.Model):
     review_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     traveller = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviews')
     listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name='reviews')
