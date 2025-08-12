@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'drf_yasg',
+    'listings'
 ]
 
 MIDDLEWARE = [
@@ -133,4 +134,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+AUTH_USER_MODEL = 'listings.User'
 CORS_ALLOW_ALL_ORIGINS = True
